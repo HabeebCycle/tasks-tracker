@@ -1,5 +1,6 @@
 import AddTask from "./components/AddTask";
 import Header from "./components/Header";
+import Tasks from "./components/Tasks";
 import { TaskProvider } from "./context/tasks";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <div className="container">
         <Header />
         <AddTask />
+        <Tasks />
       </div>
     </TaskProvider>
   );
