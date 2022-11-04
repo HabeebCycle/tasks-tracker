@@ -15,6 +15,7 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
+  max-height: 800px;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
