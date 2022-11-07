@@ -3,6 +3,7 @@ import { reducer } from "./reducer";
 
 const initialState = {
   tasks: [],
+  showForm: false,
 };
 
 const TaskContext = createContext();

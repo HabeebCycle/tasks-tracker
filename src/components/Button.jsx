@@ -1,10 +1,19 @@
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
+import TaskContext from "../context/tasks";
+import { CHANGE_SHOW_FORM } from "../context/types";
 
-const Button = ({ color, label, onClick }) => {
+const Button = () => {
+  const { state, dispatch } = React.useContext(TaskContext);
+  const label = state.showForm ? "Hide Form" : "Show Form";
+  const color = state.showForm ? "purple" : "green";
+
+  const handleClick = () => {
+    dispatch({ type: CHANGE_SHOW_FORM });
+  };
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       className="btn"
       style={{ backgroundColor: color }}
     >
@@ -13,6 +22,7 @@ const Button = ({ color, label, onClick }) => {
   );
 };
 
+/*
 Button.defaultProps = {
   color: "steelblue",
   label: "Add",
@@ -23,5 +33,6 @@ Button.propTypes = {
   color: PropTypes.string,
   onClick: PropTypes.func,
 };
+*/
 
 export default Button;

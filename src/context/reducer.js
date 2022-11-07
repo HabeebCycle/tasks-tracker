@@ -1,4 +1,4 @@
-import { ADD, DELETE, UPDATE } from "./types";
+import { ADD, CHANGE_SHOW_FORM, DELETE, UPDATE } from "./types";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -17,10 +17,16 @@ export const reducer = (state, action) => {
         ...state,
         tasks: state.tasks.map((obj) => {
           if (obj.id === action.payload) {
-            obj.reminder = !obj.reminder;
+            obj = { ...obj, reminder: !obj.reminder };
           }
           return obj;
         }),
+      };
+    case CHANGE_SHOW_FORM:
+      // action = {type:'CHANGE_SHOW_FORM'}
+      return {
+        ...state,
+        showForm: !state.showForm,
       };
 
     default:
