@@ -5,7 +5,7 @@ import { CHANGE_SHOW_FORM } from "../context/types";
 
 const Button = () => {
   const { state, dispatch } = React.useContext(TaskContext);
-  const label = state.showForm ? "Hide Form" : "Show Form";
+  const label = state.showForm ? "Hide Form" : "Add Task";
   const color = state.showForm ? "purple" : "green";
 
   const handleClick = () => {

@@ -8,6 +8,7 @@ const Tasks = () => {
 
   return (
     <div>
+      {tasks.length <= 0 && <p>No Task Available</p>}
       {tasks.map((task, i) => (
         <Task key={i} task={task} />
       ))}

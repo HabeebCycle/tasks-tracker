@@ -1,17 +1,24 @@
-import AddTask from "./components/AddTask";
 import Header from "./components/Header";
-import Tasks from "./components/Tasks";
+import Home from "./components/Home";
 import { TaskProvider } from "./context/tasks";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
+import About from "./components/About";
 
 function App() {
   return (
-    <TaskProvider>
-      <div className="container">
-        <Header />
-        <AddTask />
-        <Tasks />
-      </div>
-    </TaskProvider>
+    <BrowserRouter>
+      <TaskProvider>
+        <div className="container">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+          <Footer />
+        </div>
+      </TaskProvider>
+    </BrowserRouter>
   );
 }
 
