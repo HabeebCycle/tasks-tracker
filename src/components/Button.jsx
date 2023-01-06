@@ -3,10 +3,10 @@ import React from "react";
 import TaskContext from "../context/tasks";
 import { CHANGE_SHOW_FORM } from "../context/types";
 
-const Button = () => {
+const Button = ({ label, color, widthx }) => {
   const { state, dispatch } = React.useContext(TaskContext);
-  const label = state.showForm ? "Hide Form" : "Add Task";
-  const color = state.showForm ? "purple" : "green";
+  const labelText = label ? label : state.showForm ? "Hide Form" : "Add Task";
+  const bgColor = color ? color : state.showForm ? "purple" : "green";
 
   const handleClick = () => {
     dispatch({ type: CHANGE_SHOW_FORM });
@@ -15,9 +15,9 @@ const Button = () => {
     <button
       onClick={handleClick}
       className="btn"
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: bgColor }}
     >
-      {label}
+      {labelText}
     </button>
   );
 };
