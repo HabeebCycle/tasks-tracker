@@ -62,7 +62,6 @@ const AddTask = () => {
               <span style={{ color: "red" }}>Please add a date and time</span>
             )}
           </div>
-          <textarea className="form-control" rows={6} />
           <div className="form-control form-control-check">
             <label>Set Reminder</label>
             <input
